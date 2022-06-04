@@ -2,36 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { configureStore } from '@reduxjs/toolkit';
+// import { configureStore } from '@reduxjs/toolkit';
+import allReducers from './reducers';
+import { createStore } from 'redux';
 
-// action 
-
-const inc = () => {
-  return{
-    type:'INCREMENT'
-  }
-}
-//   const dec = () => {
-//     return{
-//       type:'DECREMENT'
-//     }
-// }
-//reducer
-
-const counter = (state = 0, action) => {
-  switch(action.type){
-    case 'INCREMENT':
-      return state + 1;
-      case 'DECREMENT':
-        return state - 1;
-        default: return state
-  }
-
-
-}
-//dispatch
-let store = configureStore(counter)
-store.dispatch(inc())
+let store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 
 

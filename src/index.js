@@ -5,6 +5,8 @@ import App from './App';
 // import { configureStore } from '@reduxjs/toolkit';
 import allReducers from './reducers';
 import { createStore } from 'redux';
+import { Provider} from 'react-redux'
+
 
 let store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
@@ -13,6 +15,8 @@ let store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && wind
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store = {store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );

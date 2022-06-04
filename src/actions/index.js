@@ -1,10 +1,12 @@
-export const inc = () => {
+export const inc = (n) => {
     return {
-        type : 'INCREMENT'
+        type : 'INCREMENT',
+        payload : n
     }
 }
-export const dec = () => {
+export const dec = (n) => {
     return {
-        type : 'DECREMENT'
+        type : 'DECREMENT',
+        payload : n
     }
 }

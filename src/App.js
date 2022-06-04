@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
      
-      <button onClick={() => dispatch(dec())}>-</button><span>{counter}</span>
-      <button onClick={() => dispatch(inc())}>+</button>
+      <button onClick={() => dispatch(dec(2))}>-</button><span>{counter}</span>
+      <button onClick={() => dispatch(inc(2))}>+</button>
       {isLogged ? <h3>you have succesfully logged in</h3> : ''}
     </div>
   );
